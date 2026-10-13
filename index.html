@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>בת המצווה של דניאלה</title><meta property="og:title" content="דניאלה חוגגת בת מצווה – מסיבת בריכה"><meta property="og:image" content="daniela.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&family=Heebo:wght@400;500;700&display=swap">
+<style>
+/* Layout concept: one night-pool scene as a phone-width hero (neon Hebrew title, framed photo),
+   then plain dark panels for the practical parts: when/where, countdown, RSVP by WhatsApp. */
+:root {
+  --night: #070B22;
+  --night-2: #0E1438;
+  --ink: #F4F6FF;
+  --muted: #B8C4F0;
+  --gold: #F2B85B;
+  --gold-hi: #FFF0BF;
+  --pink: #FF4FD8;
+  --cyan: #37F0E4;
+  --line: rgba(255,255,255,.16);
+  --card: rgba(255,255,255,.07);
+  --font-display: 'Rubik', 'Arial Hebrew', sans-serif;
+  --font-body: 'Heebo', 'Arial Hebrew', sans-serif;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--night); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.5; }
+.page { max-width: 560px; margin: 0 auto; overflow: hidden; }
+
+/* ---------- hero ---------- */
+.hero { position: relative; isolation: isolate; padding: 30px 20px 44px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+.hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; z-index: -3; }
+.hero__shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, rgba(7,11,34,.80) 0%, rgba(7,11,34,.30) 38%, rgba(7,11,34,.45) 72%, var(--night) 100%); }
+.hero__confetti { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.kicker { font-size: 16px; font-weight: 500; letter-spacing: .04em; color: var(--gold-hi); border: 1px solid rgba(242,184,91,.55); border-radius: 999px; padding: 4px 18px; background: rgba(7,11,34,.45); }
+.neon { font-family: var(--font-display); margin: 0; text-wrap: balance; }
+.neon--pink { font-weight: 700; font-size: clamp(38px, 10.5vw, 60px); line-height: 1.12; color: #FFE9FB;
+  text-shadow: 0 0 4px #fff, 0 0 14px var(--pink), 0 0 32px var(--pink), 0 0 64px var(--pink); animation: hum 7s infinite; }
+.neon--cyan { font-weight: 900; font-size: clamp(46px, 13.5vw, 78px); line-height: 1.05; color: #E6FFFD;
+  text-shadow: 0 0 4px #fff, 0 0 14px var(--cyan), 0 0 34px var(--cyan), 0 0 70px var(--cyan); }
+@keyframes hum { 0%, 92%, 100% { opacity: 1 } 93% { opacity: .78 } 95% { opacity: 1 } 97% { opacity: .85 } }
+.frame { width: min(76%, 310px); aspect-ratio: 0.867; margin-top: 8px; padding: 8px; border-radius: 999px 999px 26px 26px;
+  background: linear-gradient(135deg, var(--gold-hi), #D79A3A 50%, var(--gold-hi));
+  box-shadow: 0 0 60px rgba(255,200,100,.35), 0 28px 60px rgba(0,0,0,.55); }
+.frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 48% 20%; border-radius: 999px 999px 18px 18px; }
+.tagline { margin: 6px 0 0; font-family: var(--font-display); font-weight: 500; font-size: 22px; color: var(--gold); text-shadow: 0 2px 16px rgba(0,0,0,.6); }
+
+/* ---------- panels ---------- */
+.stack { display: flex; flex-direction: column; gap: 22px; padding: 6px 16px 56px; background: linear-gradient(180deg, var(--night) 0%, var(--night-2) 100%); }
+.panel { border: 1px solid var(--line); background: var(--card); border-radius: 22px; padding: 22px 18px; }
+.panel h2 { margin: 0 0 14px; font-family: var(--font-display); font-weight: 700; font-size: 24px; line-height: 1.2; color: var(--gold); }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; text-align: center; }
+.facts > div { padding: 2px 6px; display: flex; flex-direction: column; gap: 2px; }
+.facts > div + div { border-inline-start: 1px solid var(--line); }
+.facts small { font-size: 14px; color: var(--muted); }
+.facts strong { font-family: var(--font-display); font-weight: 900; font-size: clamp(26px, 7.4vw, 36px); line-height: 1.15; }
+.facts .place { font-size: clamp(22px, 6.4vw, 30px); }
+.address { margin: 16px 0 0; text-align: center; color: var(--muted); font-size: 16px; }
+.actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 16px; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 14px; border-radius: 14px; font: 700 16px/1.2 var(--font-body); text-decoration: none; text-align: center; cursor: pointer; border: 1px solid var(--line); background: rgba(255,255,255,.08); color: var(--ink); }
+.btn:hover { background: rgba(255,255,255,.14); }
+.btn--gold { background: linear-gradient(135deg, var(--gold-hi), var(--gold) 55%, #D79A3A); color: #2A1A00; border-color: transparent; }
+.btn--gold:hover { filter: brightness(1.06); background: linear-gradient(135deg, var(--gold-hi), var(--gold) 55%, #D79A3A); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+:focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+
+.count { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; text-align: center; }
+.count div { border: 1px solid var(--line); border-radius: 16px; padding: 12px 4px 8px; background: rgba(7,11,34,.5); }
+.count b { display: block; font-family: var(--font-display); font-weight: 900; font-size: clamp(28px, 8.5vw, 40px); line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--cyan); text-shadow: 0 0 18px rgba(55,240,228,.45); }
+.count span { font-size: 14px; color: var(--muted); }
+.count-note { margin: 12px 0 0; text-align: center; color: var(--muted); font-size: 15px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.chips li { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.06); font-size: 16px; }
+.bring { margin: 14px 0 0; color: var(--muted); font-size: 16px; }
+
+form { display: flex; flex-direction: column; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field > label, .field > legend { font-weight: 500; font-size: 16px; }
+fieldset.field { border: 0; padding: 0; margin: 0; }
+input[type=text], select, textarea { width: 100%; min-height: 48px; padding: 10px 14px; border-radius: 12px; border: 1px solid var(--line); background: rgba(7,11,34,.7); color: var(--ink); font: 400 17px/1.3 var(--font-body); }
+textarea { min-height: 84px; resize: vertical; }
+.choice { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.choice input { position: absolute; opacity: 0; pointer-events: none; }
+.choice label { display: flex; align-items: center; justify-content: center; min-height: 48px; border-radius: 12px; border: 1px solid var(--line); background: rgba(7,11,34,.7); cursor: pointer; font-weight: 500; text-align: center; padding: 8px; }
+.choice input:checked + label { border-color: var(--gold); background: rgba(242,184,91,.18); color: var(--gold-hi); }
+.choice input:focus-visible + label { outline: 3px solid var(--cyan); outline-offset: 2px; }
+.hint { margin: 0; color: var(--muted); font-size: 14px; }
+.err { margin: 0; color: #FFB4C8; font-size: 15px; min-height: 1.4em; }
+
+.foot { text-align: center; color: var(--muted); font-size: 15px; display: flex; flex-direction: column; gap: 6px; }
+.foot a { color: var(--gold-hi); }
+
+@media (prefers-reduced-motion: reduce) { .neon--pink { animation: none; } }
+@media (max-width: 380px) { .actions { grid-template-columns: 1fr; } }
+</style>
+
+<div class="page" lang="he" dir="rtl">
+
+<header class="hero">
+  <img class="hero__bg" src="night.jpg" alt="" aria-hidden="true">
+  <div class="hero__shade" aria-hidden="true"></div>
+  <canvas class="hero__confetti" id="confetti" aria-hidden="true"></canvas>
+  <span class="kicker">מזמינים אתכם!</span>
+  <h1 class="neon neon--pink">דניאלה חוגגת<br>בת מצווה!</h1>
+  <p class="neon neon--cyan">מסיבת בריכה</p>
+  <div class="frame"><img src="daniela.jpg" alt="דניאלה מחייכת"></div>
+  <p class="tagline">מחכים לחגוג ולשמוח יחד!</p>
+</header>
+
+<main class="stack">
+
+  <section class="panel" aria-labelledby="when">
+    <h2 id="when">מתי ואיפה</h2>
+    <div class="facts">
+      <div><small>יום חמישי</small><strong dir="ltr">5.11.26</strong></div>
+      <div><small>שעה</small><strong dir="ltr">19:00</strong></div>
+      <div><small>מיקום</small><strong class="place">ווטרדנס</strong></div>
+    </div>
+    <p class="address">הכפר הירוק, רמת השרון</p>
+    <div class="actions">
+      <a class="btn btn--gold" id="waze" href="https://waze.com/ul?ll=32.135172%2C34.829305&amp;navigate=yes" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        ניווט בוויז</a>
+      <a class="btn" id="cal" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg>
+        הוספה ליומן</a>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="cd">
+    <h2 id="cd">הספירה לאחור</h2>
+    <div class="count" id="count" role="timer" aria-live="off">
+      <div><b id="cd-d">--</b><span>ימים</span></div>
+      <div><b id="cd-h">--</b><span>שעות</span></div>
+      <div><b id="cd-m">--</b><span>דקות</span></div>
+      <div><b id="cd-s">--</b><span>שניות</span></div>
+    </div>
+    <p class="count-note" id="cd-note">עד שנקפוץ למים</p>
+  </section>
+
+  <section class="panel" aria-labelledby="what">
+    <h2 id="what">מה מחכה לנו</h2>
+    <ul class="chips">
+      <li>בריכה מקורה ומחוממת</li>
+      <li>מוזיקה וריקודים</li>
+      <li>אוכל</li>
+      <li>משחקי חברה</li>
+      <li>כיף במים</li>
+    </ul>
+    <p class="bring">אל תשכחו בגד ים ומגבת.</p>
+  </section>
+
+  <section class="panel" aria-labelledby="rsvp">
+    <h2 id="rsvp">אישור הגעה</h2>
+    <form id="rsvp-form" novalidate>
+      <div class="field">
+        <label for="kid">שם הילד/ה</label>
+        <input type="text" id="kid" name="kid" autocomplete="off" placeholder="למשל: נועה כהן">
+      </div>
+      <fieldset class="field">
+        <legend>מגיעים?</legend>
+        <div class="choice">
+          <input type="radio" id="yes" name="going" value="yes" checked><label for="yes">כן, מגיעים!</label>
+          <input type="radio" id="no" name="going" value="no"><label for="no">לא נוכל להגיע</label>
+        </div>
+      </fieldset>
+      <div class="field" id="adults-field">
+        <label for="adults">מבוגרים מלווים</label>
+        <select id="adults" name="adults">
+          <option value="0">בלי מלווה</option>
+          <option value="1">מבוגר אחד</option>
+          <option value="2">שני מבוגרים</option>
+          <option value="3">שלושה מבוגרים</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="note">רגישויות או הערות</label>
+        <textarea id="note" name="note" placeholder="אלרגיות, ללא גלוטן, וכל דבר שחשוב לנו לדעת"></textarea>
+      </div>
+      <p class="err" id="err" role="alert"></p>
+      <a class="btn btn--gold" id="send" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.6L3 21l1.5-5.4A8.5 8.5 0 1 1 21 12z"/></svg>
+        שליחת האישור בוואטסאפ</a>
+      <p class="hint">הכפתור פותח הודעה מוכנה בוואטסאפ. צריך רק ללחוץ על שליחה.</p>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <span>מחכים לכם!</span>
+    <a href="https://www.waterdance.co.il/bat-mitzvah-event/" target="_blank" rel="noopener">עוד על המתחם של ווטרדנס</a>
+  </footer>
+
+</main>
+</div>
+
+<script>
+(function () {
+  // The number guests send their RSVP to, digits only with country code, e.g. 9725XXXXXXXX.
+  // Empty means WhatsApp opens with the message ready and the guest picks the contact.
+  var RSVP_PHONE = '';
+
+  var EVENT_START = new Date('2026-11-05T19:00:00+02:00');
+  var EVENT_END = new Date('2026-11-05T22:00:00+02:00');
+
+  /* ---------- calendar link ---------- */
+  function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
+  var calUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent('מסיבת בת המצווה של דניאלה')
+    + '&dates=' + stamp(EVENT_START) + '/' + stamp(EVENT_END)
+    + '&location=' + encodeURIComponent('ווטרדנס, הכפר הירוק, רמת השרון')
+    + '&details=' + encodeURIComponent('מסיבת בריכה. אל תשכחו בגד ים ומגבת!');
+  document.getElementById('cal').href = calUrl;
+
+  /* ---------- countdown ---------- */
+  var el = { d: document.getElementById('cd-d'), h: document.getElementById('cd-h'), m: document.getElementById('cd-m'), s: document.getElementById('cd-s'), note: document.getElementById('cd-note') };
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+  function tick() {
+    var left = EVENT_START.getTime() - Date.now();
+    if (left <= 0) {
+      el.d.textContent = el.h.textContent = el.m.textContent = el.s.textContent = '00';
+      el.note.textContent = Date.now() < EVENT_END.getTime() ? 'החגיגה התחילה!' : 'תודה שהייתם איתנו';
+      return;
+    }
+    var s = Math.floor(left / 1000);
+    el.d.textContent = Math.floor(s / 86400);
+    el.h.textContent = pad(Math.floor(s % 86400 / 3600));
+    el.m.textContent = pad(Math.floor(s % 3600 / 60));
+    el.s.textContent = pad(s % 60);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ---------- RSVP by WhatsApp ---------- */
+  var kid = document.getElementById('kid');
+  var adults = document.getElementById('adults');
+  var note = document.getElementById('note');
+  var adultsField = document.getElementById('adults-field');
+  var send = document.getElementById('send');
+  var err = document.getElementById('err');
+
+  function going() { return document.getElementById('yes').checked; }
+  function buildLink() {
+    var lines = ['שלום! אישור הגעה לבת המצווה של דניאלה (5.11.26, 19:00, ווטרדנס).'];
+    lines.push('שם הילד/ה: ' + kid.value.trim());
+    lines.push(going() ? 'מגיעים!' : 'לא נוכל להגיע.');
+    if (going() && adults.value !== '0') lines.push('מבוגרים מלווים: ' + adults.value);
+    if (note.value.trim()) lines.push('הערות: ' + note.value.trim());
+    var base = RSVP_PHONE ? 'https://wa.me/' + RSVP_PHONE : 'https://wa.me/';
+    return base + '?text=' + encodeURIComponent(lines.join('\n'));
+  }
+  function refresh() {
+    adultsField.hidden = !going();
+    send.href = buildLink();
+    if (kid.value.trim()) err.textContent = '';
+  }
+  ['input', 'change'].forEach(function (ev) { document.getElementById('rsvp-form').addEventListener(ev, refresh); });
+  send.addEventListener('click', function (e) {
+    if (!kid.value.trim()) {
+      e.preventDefault();
+      err.textContent = 'כתבו את שם הילד/ה כדי שנדע מי מגיע.';
+      kid.focus();
+    }
+  });
+  document.getElementById('rsvp-form').addEventListener('submit', function (e) { e.preventDefault(); });
+  refresh();
+
+  /* ---------- confetti ---------- */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv = document.getElementById('confetti');
+  if (!cv.getContext || reduce) return;
+  var ctx = cv.getContext('2d');
+  var colors = ['#FF4FD8', '#37F0E4', '#F2B85B', '#7B8CFF', '#FFFFFF'];
+  var parts = [], W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  function resize() {
+    var r = cv.getBoundingClientRect();
+    W = r.width; H = r.height;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function spawn(top) {
+    return { x: Math.random() * W, y: top ? Math.random() * H : -10, w: 5 + Math.random() * 6, h: 3 + Math.random() * 4,
+      vy: 20 + Math.random() * 40, vx: -10 + Math.random() * 20, r: Math.random() * 6.28, vr: -2 + Math.random() * 4,
+      c: colors[(Math.random() * colors.length) | 0] };
+  }
+  resize();
+  for (var i = 0; i < 40; i++) parts.push(spawn(true));
+  window.addEventListener('resize', resize);
+  var last = performance.now();
+  function frame(now) {
+    var dt = Math.min((now - last) / 1000, 0.05); last = now;
+    if (!document.hidden) {
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < parts.length; i++) {
+        var p = parts[i];
+        p.y += p.vy * dt; p.x += p.vx * dt; p.r += p.vr * dt;
+        if (p.y > H + 10) parts[i] = p = spawn(false);
+        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.r);
+        ctx.fillStyle = p.c; ctx.globalAlpha = .85;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</html>
