@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>תזכורת: בת המצווה של דניאלה</title><meta property="og:type" content="website"><meta property="og:locale" content="he_IL"><meta property="og:title" content="תזכורת: המסיבה של דניאלה ביום חמישי!"><meta property="og:description" content="5.11.26 בשעה 19:30, ווטרדנס – הכפר הירוק, רמת השרון. מחכים לחגוג ולשמוח יחד!"><meta property="og:url" content="https://nadavraanan.github.io/daniela-bat-mitzvah/reminder.html"><meta property="og:image" content="https://nadavraanan.github.io/daniela-bat-mitzvah/og-image-1930.jpg"><meta property="og:image:width" content="1408"><meta property="og:image:height" content="768"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nadavraanan.github.io/daniela-bat-mitzvah/og-image-1930.jpg">
+<html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>תזכורת: בת המצווה של דניאלה</title><meta property="og:type" content="website"><meta property="og:locale" content="he_IL"><meta property="og:title" content="תזכורת: המסיבה של דניאלה ביום שלישי!"><meta property="og:description" content="10.11.26 בשעה 19:30, ווטרדנס – הכפר הירוק, רמת השרון. מחכים לחגוג ולשמוח יחד!"><meta property="og:url" content="https://nadavraanan.github.io/daniela-bat-mitzvah/reminder.html"><meta property="og:image" content="https://nadavraanan.github.io/daniela-bat-mitzvah/og-image-1011.jpg"><meta property="og:image:width" content="1408"><meta property="og:image:height" content="768"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://nadavraanan.github.io/daniela-bat-mitzvah/og-image-1011.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,12 +105,12 @@ textarea { min-height: 84px; resize: vertical; }
 <div class="page" lang="he" dir="rtl">
 <div class="remind" role="region" aria-label="תזכורת">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10.3 20a1.9 1.9 0 0 0 3.4 0"/></svg>
-  <div class="remind__txt"><strong id="rb-head">תזכורת: המסיבה של דניאלה!</strong><span id="rb-sub">יום חמישי 5.11 בשעה 19:30, ווטרדנס</span></div>
+  <div class="remind__txt"><strong id="rb-head">תזכורת: המסיבה של דניאלה!</strong><span id="rb-sub">יום שלישי 10.11 בשעה 19:30, ווטרדנס</span></div>
   <a href="#rsvp">אישור הגעה</a>
 </div>
 <script>
 (function(){
-  var d=Math.ceil((new Date('2026-11-05T19:30:00+02:00').getTime()-Date.now())/86400000);
+  var d=Math.ceil((new Date('2026-11-10T19:30:00+02:00').getTime()-Date.now())/86400000);
   var head=document.getElementById('rb-head'), sub=document.getElementById('rb-sub');
   if(d>1) head.textContent='תזכורת: המסיבה בעוד '+d+' ימים!';
   else if(d===1) head.textContent='תזכורת: המסיבה של דניאלה מחר!';
@@ -136,7 +136,7 @@ textarea { min-height: 84px; resize: vertical; }
   <section class="panel" aria-labelledby="when">
     <h2 id="when">מתי ואיפה</h2>
     <div class="facts">
-      <div><small>יום חמישי</small><strong dir="ltr">5.11.26</strong></div>
+      <div><small>יום שלישי</small><strong dir="ltr">10.11.26</strong></div>
       <div><small>שעה</small><strong dir="ltr">19:30</strong></div>
       <div><small>מיקום</small><strong class="place">ווטרדנס</strong></div>
     </div>
@@ -214,8 +214,8 @@ textarea { min-height: 84px; resize: vertical; }
   // Guests' RSVP message opens in WhatsApp addressed to this number.
   var RSVP_PHONE = '972507559537';
 
-  var EVENT_START = new Date('2026-11-05T19:30:00+02:00');
-  var EVENT_END = new Date('2026-11-05T22:30:00+02:00');
+  var EVENT_START = new Date('2026-11-10T19:30:00+02:00');
+  var EVENT_END = new Date('2026-11-10T22:30:00+02:00');
 
   /* ---------- calendar link ---------- */
   function stamp(d) { return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, ''); }
@@ -253,7 +253,7 @@ textarea { min-height: 84px; resize: vertical; }
 
   function going() { return document.getElementById('yes').checked; }
   function buildLink() {
-    var lines = ['שלום! אישור הגעה לבת המצווה של דניאלה (5.11.26, 19:30, ווטרדנס).'];
+    var lines = ['שלום! אישור הגעה לבת המצווה של דניאלה (10.11.26, 19:30, ווטרדנס).'];
     lines.push('שם הילד/ה: ' + kid.value.trim());
     lines.push(going() ? 'מגיעים!' : 'לא נוכל להגיע.');
     if (note.value.trim()) lines.push('הערות: ' + note.value.trim());
