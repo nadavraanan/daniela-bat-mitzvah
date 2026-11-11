@@ -114,12 +114,14 @@ textarea { min-height: 84px; resize: vertical; }
 </div>
 <script>
 (function(){
-  var d=Math.ceil((new Date('2026-11-11T19:30:00+02:00').getTime()-Date.now())/86400000);
+  var EVENT_DAY=Date.UTC(2026,10,11), END=new Date('2026-11-11T22:30:00+02:00').getTime();
+  var p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jerusalem'}).format(new Date()).split('-');
+  var d=Math.round((EVENT_DAY-Date.UTC(+p[0],+p[1]-1,+p[2]))/86400000);
   var head=document.getElementById('rb-head'), sub=document.getElementById('rb-sub');
-  if(d>1) head.textContent='תזכורת: המסיבה בעוד '+d+' ימים!';
+  if(Date.now()>END||d<0){ head.textContent='תודה שהייתם איתנו!'; sub.textContent='היה כיף לחגוג יחד'; }
+  else if(d===0){ head.textContent='המסיבה של דניאלה היום!'; sub.textContent='היום בשעה 19:30, ווטרדנס. ההסעה מגורדון ב-18:50'; }
   else if(d===1) head.textContent='תזכורת: המסיבה של דניאלה מחר!';
-  else if(d===0) head.textContent='המסיבה של דניאלה היום!';
-  else { head.textContent='תודה שהייתם איתנו!'; sub.textContent='היה כיף לחגוג יחד'; }
+  else head.textContent='תזכורת: המסיבה בעוד '+d+' ימים!';
 })();
 </script>
 
