@@ -63,7 +63,7 @@ body { background: var(--night); color: var(--ink); font-family: var(--font-body
 .btn svg { width: 20px; height: 20px; flex: none; }
 :focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
 
-.count { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; text-align: center; }
+.count { direction: ltr; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; text-align: center; }
 .count div { border: 1px solid var(--line); border-radius: 16px; padding: 12px 4px 8px; background: rgba(7,11,34,.5); }
 .count b { display: block; font-family: var(--font-display); font-weight: 900; font-size: clamp(28px, 8.5vw, 40px); line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--cyan); text-shadow: 0 0 18px rgba(55,240,228,.45); }
 .count span { font-size: 14px; color: var(--muted); }
